@@ -1,9 +1,23 @@
-<h1>Bazar</h1>
-<h3>Список магазинов:</h3>
-{% for shop in shops %}
-	<p>Название: {{ shop.name }} <a href="#">(перейти)</a></p>
-	<p>Адрес: {{ shop.address }}</p>
-	<p>Продавец: {{ shop.seller }}</p>
-	<p>Телефон: {{ shop.phone }}</p>
-	<hr>
-{% endfor %}
+{% extends 'shops/base.html' %}
+
+{% block content %}
+	<h3>Магазины в Грозном</h3>
+	<br>
+	<div class="row">
+	<div class="col">
+	<div class="card-deck">
+		{% for shop in shops %}
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title"><a href="#">{{ shop.name }}</a></h5>
+				<p>Адрес: {{ shop.address }}</p>
+				<p>Продавец: {{ shop.seller }}</p>
+				<p>Телефон: {{ shop.phone }}</p>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	</div>
+	</div>
+	</div>
+{% endblock %}
