@@ -1,10 +1,17 @@
 {% extends 'shops/base.html' %}
 
 {% block content %}
-	<form method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<!-- <input type="button" name="" value="Отправить!"> -->
-		<button>Дракарис</button>
-	</form>
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<h3>Обратная связь</h3>
+			<form method="post">{% csrf_token %}
+				<div class="form-group">
+					{{ form.as_p }}
+					<input class="btn btn-primary" type="submit" value="Отправить">
+				</div>
+			</form>
+		</div>
+		<div class="col-3"></div>
+	</div>
 {% endblock %}

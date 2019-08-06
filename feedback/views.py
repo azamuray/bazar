@@ -8,14 +8,13 @@ from .forms import ContactForm
 class ContactView(FormView):
 	form_class = ContactForm
 	template_name = 'feedback/contact.html'
-	success_url = '/thanks/'
+	success_url = 'thanks/'
 
 	def form_invalid(self, form):
 		return super().form_invalid(form)
 
 	def form_valid(self, form):
 		form.send_email()
-		# return render(request, self.template_name, text)
 		return super().form_valid(form)
 
 
