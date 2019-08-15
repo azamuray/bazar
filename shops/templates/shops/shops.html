@@ -9,10 +9,14 @@
 		{% for shop in shops %}
 		<div class="card">
 			<div class="card-body">
-				<h5 class="card-title"><a href="#">{{ shop.name }}</a></h5>
-				<p>Адрес: {{ shop.address }}</p>
-				<p>Продавец: {{ shop.seller }}</p>
-				<p>Телефон: {{ shop.phone }}</p>
+				<div style="text-align: left;">
+					<h5 class="card-title"><a href="#">{{ shop.name }}</a></h5>
+					<p>Категория: {{ shop.category }}</p>
+					<p>Адрес: {{ shop.address }}</p>
+					<p>Время работы: {{ shop.work_time }}</p>
+					<p>Продавец: {{ shop.seller }}</p>
+					<p>Телефон: {{ shop.phone }}</p>
+				</div>
 			</div>
 		</div>
 		{% endfor %}
